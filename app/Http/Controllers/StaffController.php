@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StaffCreateRequest;
 use Illuminate\Http\Request;
 
 class StaffController extends Controller
@@ -11,8 +12,8 @@ class StaffController extends Controller
         return view('staff.new');
     }
 
-    public function newConfirm(Request $request)
+    public function newConfirm(StaffCreateRequest $request)
     {
-        return view('staff.newConfirm');
+        return view('staff.newConfirm', ['data' => $request->all()]);
     }
 }

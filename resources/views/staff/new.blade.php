@@ -1,6 +1,16 @@
 <x-layout>
     <h1 class="text-3xl my-8">スタッフ追加</h1>
     <form method="POST" action="/staffs/new/confirm">
+        @csrf
+        @if($errors->any())
+        <div>
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                 スタッフ名を入力して下さい。
