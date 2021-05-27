@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 
 Route::get('/staffs/new', [StaffController::class, 'new']);
+
+Route::post('/staffs/new/confirm', [StaffController::class, 'newConfirm']);

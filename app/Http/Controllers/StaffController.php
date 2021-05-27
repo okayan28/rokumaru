@@ -10,4 +10,9 @@ class StaffController extends Controller
     {
         return view('staff.new');
     }
+
+    public function newConfirm(Request $request)
+    {
+        return view('staff.newConfirm');
+    }
 }
