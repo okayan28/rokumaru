@@ -13,7 +13,7 @@
                    placeholder="スタッフ名" 
                    @if(old('name'))
                    value="{{old('name')}}"
-                   @elseif($data['name'])
+                   @elseif(isset($data) and $data['name'])
                    value="{{$data['name']}}"
                    @endif
                    >
