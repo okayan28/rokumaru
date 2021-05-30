@@ -16,4 +16,10 @@ class StaffController extends Controller
     {
         return view('staff.newConfirm', ['data' => $request->all()]);
     }
+
+    public function newBack(Request $request)
+    {
+        return view('staff.new', ['data' => $request->all()]);
+    }
+
 }

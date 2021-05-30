@@ -6,7 +6,17 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                 スタッフ名を入力して下さい。
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline" name="name" id="name" type="text" placeholder="スタッフ名" value="{{old('name')}}">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline"
+                   name="name" 
+                   id="name" 
+                   type="text"
+                   placeholder="スタッフ名" 
+                   @if(old('name'))
+                   value="{{old('name')}}"
+                   @elseif($data['name'])
+                   value="{{$data['name']}}"
+                   @endif
+                   >
             @if ($errors->has('name'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('name')}}</div>
             @endif
