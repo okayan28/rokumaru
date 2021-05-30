@@ -11,4 +11,5 @@ class Staff extends Model
 
     protected $guarded = array('id');
     public $timestamps = false;
+    protected $table = 'staffs';
 }

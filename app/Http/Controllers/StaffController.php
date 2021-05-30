@@ -29,7 +29,8 @@ class StaffController extends Controller
         $staff = new Staff;
         $form = $request->all();
         unset($form['_token']);
-        $staff->fill($form)->save();
+        $staff->fill($form);
+        $staff->save();
         return redirect('/staffs');
     }
 }
