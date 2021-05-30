@@ -1,16 +1,14 @@
 <x-layout>
     <h1 class="text-3xl my-8">スタッフ追加確認</h1>
     <form method="POST" action="/staffs/create">
-    <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2">
-            スタッフ名
-        </label>
-        <p>
-            {{$data['name']}}
-        </p>
-    </div>
-    <div>password: {{$data['password']}}</div>
-
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">スタッフ名</label>
+            <p>{{$data['name']}}</p>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">パスワード</label>
+            <p>●●●●●●●●●</p>
+        </div>
         <input type="hidden" name="name" value="{{$data['name']}}">
         <input type="hidden" name="password" value="{{$data['password']}}">
         <div class="mb-4">
