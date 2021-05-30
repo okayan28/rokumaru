@@ -6,7 +6,7 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                 スタッフ名を入力して下さい。
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline" name="name" id="name" type="text" placeholder="スタッフ名">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline" name="name" id="name" type="text" placeholder="スタッフ名" value="{{old('name')}}">
             @if ($errors->has('name'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('name')}}</div>
             @endif
@@ -34,7 +34,7 @@
                 戻る 
             </a>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                保存
+                確認画面へ進む
             </button>
         </div>
     </form>
