@@ -33,4 +33,10 @@ class StaffController extends Controller
         $staff->save();
         return redirect('/staffs');
     }
+
+    public function index(Request $request)
+    {
+        $items = Staff::all();
+        return view('staff.index', ['items' => $items]);
+    }
 }
