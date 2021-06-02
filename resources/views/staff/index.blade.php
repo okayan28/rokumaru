@@ -3,13 +3,15 @@
     <table class="table-auto">
         <thead>
             <tr>
-                <th>スタッフ名</th>
+                <th class="border px-4 py-2">ID</th>
+                <th class="border px-4 py-2">スタッフ名</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($items as $item)
                 <tr>
-                    <td>{{$item->name}}</td>
+                    <td class="border px-4 py-2">{{$item->id}}</td>
+                    <td class="border px-4 py-2">{{$item->name}}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -18,9 +20,5 @@
         <a href="/staffs/new" class="inline-flex items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             新規作成
         </a>
-    </div>   
-
-    {{-- <div>
-        {{var_dump($items)}}
-    </div> --}}
+    </div>
 </x-layout>
