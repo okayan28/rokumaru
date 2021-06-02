@@ -11,7 +11,7 @@
             @foreach ($items as $item)
                 <tr>
                     <td class="border px-4 py-2">{{$item->id}}</td>
-                    <td class="border px-4 py-2">{{$item->name}}</td>
+                    <td class="border px-4 py-2"><a href="/staffs/{{$item->id}}/edit">{{$item->name}}</a></td>
                 </tr>
             @endforeach
         </tbody>

@@ -1,6 +1,6 @@
 <x-layout>
-    <h1 class="text-3xl my-8">スタッフ追加</h1>
-    <form method="POST" action="/staffs/new/confirm">
+    <h1 class="text-3xl my-8">スタッフ編集</h1>
+    <form method="POST" action="/staffs/{{$staff->id}}/edit/confirm">
         @csrf
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -13,8 +13,8 @@
                    placeholder="スタッフ名" 
                    @if(old('name'))
                    value="{{old('name')}}"
-                   @elseif(isset($data) and $data['name'])
-                   value="{{$data['name']}}"
+                   @elseif(isset($staff) and $staff['name'])
+                   value="{{$staff['name']}}"
                    @endif
                    >
             @if ($errors->has('name'))
@@ -25,7 +25,7 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                 パスワードを入力して下さい。
             </label>
-            <input class="shadow appearance-none boreditder rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline" name="password" id="password" type="password" placeholder="パスワード">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline" name="password" id="password" type="password" placeholder="パスワード">
             @if ($errors->has('password'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('password')}}</div>
             @endif
