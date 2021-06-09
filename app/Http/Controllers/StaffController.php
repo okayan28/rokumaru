@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StaffConfirmRequest;
 use App\Http\Requests\StaffCreateRequest;
+use App\Http\Requests\StaffEditConfirmRequest;
 use Illuminate\Http\Request;
 use App\Models\Staff;
 
@@ -43,5 +44,10 @@ class StaffController extends Controller
     public function edit(Request $request, $id)
     {
         return view('staff.edit', ['staff' => Staff::find($id)]);
+    }
+
+    public function editConfirm(StaffEditConfirmRequest $request, $id)
+    {
+        return view('staff.editConfirm', ['data' => $request->all()]);
     }
 }

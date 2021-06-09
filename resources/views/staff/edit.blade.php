@@ -2,6 +2,7 @@
     <h1 class="text-3xl my-8">スタッフ編集</h1>
     <form method="POST" action="/staffs/{{$staff->id}}/edit/confirm">
         @csrf
+        <input type="hidden" value="{{$staff->id}}" name="id">
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                 スタッフ名を入力して下さい。
