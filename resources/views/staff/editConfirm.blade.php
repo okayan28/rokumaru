@@ -2,6 +2,7 @@
     <h1 class="text-3xl my-8">スタッフ追加確認</h1>
     <form method="POST" action="/staffs/{{$data['id']}}/update">
         @csrf
+        <input type="hidden" name="id" value="{{$data['id']}}">
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2">スタッフ名</label>
             <p>{{$data['name']}}</p>

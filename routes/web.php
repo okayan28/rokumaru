@@ -26,3 +26,4 @@ Route::post('/staffs/create', [StaffController::class, 'create']);
 Route::get('/staffs', [StaffController::class, 'index']);
 Route::get('/staffs/{id}/edit', [StaffController::class, 'edit']);
 Route::post('/staffs/{id}/edit/confirm', [StaffController::class, 'editConfirm']);
+Route::post('/staffs/{id}/update', [StaffController::class, 'update']);

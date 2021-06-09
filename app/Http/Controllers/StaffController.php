@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StaffConfirmRequest;
 use App\Http\Requests\StaffCreateRequest;
 use App\Http\Requests\StaffEditConfirmRequest;
+use App\Http\Requests\StaffUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Staff;
 
@@ -49,5 +50,15 @@ class StaffController extends Controller
     public function editConfirm(StaffEditConfirmRequest $request, $id)
     {
         return view('staff.editConfirm', ['data' => $request->all()]);
+    }
+
+    public function update(StaffUpdateRequest $request)
+    {
+        $form = $request->all();
+        $staff = Staff::find($form['id']);
+        unset($form['_token']);
+        $staff->fill($form);
+        $staff->save();
+        return redirect('/staffs');
     }
 }
