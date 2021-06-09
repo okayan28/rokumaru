@@ -42,6 +42,11 @@ class StaffController extends Controller
         return view('staff.index', ['items' => $items]);
     }
 
+    public function show($id)
+    {
+        return view('staff.show', ['staff' => Staff::find($id)]);
+    }
+
     public function edit(Request $request, $id)
     {
         return view('staff.edit', ['staff' => Staff::find($id)]);

@@ -24,6 +24,7 @@ Route::post('/staffs/new/confirm', [StaffController::class, 'newConfirm']);
 Route::post('/staffs/new/back', [StaffController::class, 'newBack']);
 Route::post('/staffs/create', [StaffController::class, 'create']);
 Route::get('/staffs', [StaffController::class, 'index']);
+Route::get('/staffs/{id}', [StaffController::class, 'show']);
 Route::get('/staffs/{id}/edit', [StaffController::class, 'edit']);
 Route::post('/staffs/{id}/edit/confirm', [StaffController::class, 'editConfirm']);
 Route::post('/staffs/{id}/update', [StaffController::class, 'update']);
