@@ -6,6 +6,7 @@
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2">スタッフ名</label>
             <p>{{$data['name']}}</p>
+            <P class="">削除しますか？</P>
         </div>
         <div class="mb-4">
             <button formaction="/staffs/{{$data['id']}}/edit/back" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">

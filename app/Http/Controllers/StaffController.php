@@ -71,4 +71,10 @@ class StaffController extends Controller
     {
         return view('staff.deleteConfirm', ['data' => Staff::find($id)]);
     }
+
+    public function delete($id)
+    {
+        Staff::find($id)->delete();
+        return redirect('/staffs');
+    }
 }
