@@ -13,7 +13,7 @@ class StaffController extends Controller
 {
     public function new(Request $request)
     {
-        return view('staff.new');
+        return view('staff.new', ['test' => 'fuga']);
     }
 
     public function newConfirm(StaffConfirmRequest $request)
