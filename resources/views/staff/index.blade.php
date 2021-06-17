@@ -1,5 +1,8 @@
 <x-layout>
     <h1 class="text-3xl my-8">スタッフ一覧</h1>
+    @if (Session::has('flash'))
+        <p>{{Session::get('flash')}}</p>
+    @endif
     <table class="table-auto">
         <thead>
             <tr>

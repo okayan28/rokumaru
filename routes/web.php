@@ -29,3 +29,4 @@ Route::get('/staffs/{id}/edit', [StaffController::class, 'edit']);
 Route::post('/staffs/{id}/edit/confirm', [StaffController::class, 'editConfirm']);
 Route::post('/staffs/{id}/update', [StaffController::class, 'update']);
 Route::get('/staffs/{id}/delete/confirm', [StaffController::class, 'deleteConfirm']);
+Route::post('/staffs/{id}/delete', [StaffController::class, 'delete']);

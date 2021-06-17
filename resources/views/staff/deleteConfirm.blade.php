@@ -9,9 +9,9 @@
             <P class="">削除しますか？</P>
         </div>
         <div class="mb-4">
-            <button formaction="/staffs/{{$data['id']}}/edit/back" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                戻る 
-            </button>
+            <a href="/staffs/{{$data['id']}}" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                戻る
+            </a>
             <button class="bg-red-400 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 削除
             </button>

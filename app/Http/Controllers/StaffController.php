@@ -36,7 +36,7 @@ class StaffController extends Controller
         return redirect('/staffs');
     }
 
-    public function index(Request $request)
+    public function index()
     {
         $items = Staff::all();
         return view('staff.index', ['items' => $items]);
@@ -72,9 +72,10 @@ class StaffController extends Controller
         return view('staff.deleteConfirm', ['data' => Staff::find($id)]);
     }
 
-    public function delete($id)
+    public function delete(Request $request, $id)
     {
         Staff::find($id)->delete();
+        $request->session()->flash('flash', 'スタッフ[id='.$id.']を削除しました');
         return redirect('/staffs');
     }
 }
