@@ -27,9 +27,9 @@
             </label>
             <input class="shadow appearance-none boreditder rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline" 
                    name="price" 
-                   id="price" 
-                   type="price"
-                    placeholder="価格">
+                   id="price"
+                   type="number"
+                   placeholder="価格">
             @if ($errors->has('price'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('price')}}</div>
             @endif
