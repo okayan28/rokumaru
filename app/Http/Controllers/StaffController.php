@@ -66,4 +66,9 @@ class StaffController extends Controller
         $staff->save();
         return redirect('/staffs');
     }
+
+    public function deleteConfirm(Request $request, $id)
+    {
+        return view('staff.deleteConfirm', ['data' => Staff::find($id)]);
+    }
 }
