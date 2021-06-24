@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-3xl my-8">スタッフ追加確認</h1>
+    <h1 class="text-3xl my-8">スタッフ編集確認</h1>
     <form method="POST" action="/staffs/{{$data['id']}}/update">
         @csrf
         <input type="hidden" name="id" value="{{$data['id']}}">

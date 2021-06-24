@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductCreateConfirmRequest;
 use App\Http\Requests\ProductCreateRequest;
+use App\Http\Requests\ProductEditConfirmRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -49,5 +50,11 @@ class ProductController extends Controller
     public function edit($id)
     {
         return view('product.edit', ['product' => Product::find($id)]);
+    }
+
+    public function editConfirm(ProductEditConfirmRequest $request, $id)
+    {
+        $request->flash();
+        return view('product.editConfirm', ['product' => $request->all()]);
     }
 }
