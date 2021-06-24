@@ -13,8 +13,8 @@
                    placeholder="商品名" 
                    @if(old('name'))
                    value="{{old('name')}}"
-                   @elseif(isset($data) and $data['name'])
-                   value="{{$data['name']}}"
+                   @elseif(isset($product) and $product['name'])
+                   value="{{$product['name']}}"
                    @endif
                    >
             @if ($errors->has('name'))
@@ -29,7 +29,12 @@
                    name="price" 
                    id="price"
                    type="number"
-                   placeholder="価格">
+                   placeholder="価格"
+                   @if(old('price'))
+                   value="{{old('price')}}"
+                   @elseif(isset($product) and $product['price'])
+                   value="{{$product['price']}}"
+                   @endif>
             @if ($errors->has('price'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('price')}}</div>
             @endif

@@ -19,6 +19,11 @@ class ProductController extends Controller
         return view('product.newConfirm', ['product' => $request->all()]);
     }
 
+    public function newBack(Request $request)
+    {
+        return view('product.new', ['product' => $request->all()]);
+    }
+
     public function create(ProductCreateRequest $request)
     {
         $product = new Product;
