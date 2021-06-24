@@ -16,12 +16,13 @@ class ProductController extends Controller
 
     public function newConfirm(ProductCreateConfirmRequest $request)
     {
+        $request->flash();
         return view('product.newConfirm', ['product' => $request->all()]);
     }
 
-    public function newBack(Request $request)
+    public function newBack()
     {
-        return view('product.new', ['product' => $request->all()]);
+        return view('product.new');
     }
 
     public function create(ProductCreateRequest $request)

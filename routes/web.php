@@ -22,7 +22,6 @@ Route::get('/', function () {
 
 Route::get('/staffs/new', [StaffController::class, 'new']);
 Route::post('/staffs/new/confirm', [StaffController::class, 'newConfirm']);
-Route::post('/staffs/new/back', [StaffController::class, 'newBack']);
 Route::post('/staffs/create', [StaffController::class, 'create']);
 Route::get('/staffs', [StaffController::class, 'index']);
 Route::get('/staffs/{id}', [StaffController::class, 'show']);
@@ -34,7 +33,6 @@ Route::post('/staffs/{id}/delete', [StaffController::class, 'delete']);
 
 Route::get('/products/new', [ProductController::class, 'new']);
 Route::post('/products/new/confirm', [ProductController::class, 'newConfirm']);
-Route::post('/products/new/back', [ProductController::class, 'newBack']);
 Route::post('/products/create', [ProductController::class, 'create']);
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'show']);

@@ -13,9 +13,9 @@
         <input type="hidden" name="name" value="{{$product['name']}}">
         <input type="hidden" name="price" value="{{$product['price']}}">
         <div class="mb-4">
-            <button formaction="/products/new/back" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                戻る 
-            </button>
+            <a href="/products/new" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                戻る
+            </a>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 保存
             </button>

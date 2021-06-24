@@ -18,12 +18,8 @@ class StaffController extends Controller
 
     public function newConfirm(StaffConfirmRequest $request)
     {
+        $request->flash();
         return view('staff.newConfirm', ['data' => $request->all()]);
-    }
-
-    public function newBack(Request $request)
-    {
-        return view('staff.new', ['data' => $request->all()]);
     }
 
     public function create(StaffCreateRequest $request)
@@ -54,6 +50,7 @@ class StaffController extends Controller
 
     public function editConfirm(StaffEditConfirmRequest $request, $id)
     {
+        $request->flash();
         return view('staff.editConfirm', ['data' => $request->all()]);
     }
 

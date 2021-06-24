@@ -7,16 +7,11 @@
                 商品名を入力して下さい。
             </label>
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline"
-                   name="name" 
+                   name="name"
                    id="name" 
                    type="text"
                    placeholder="商品名" 
-                   @if(old('name'))
-                   value="{{old('name')}}"
-                   @elseif(isset($product) and $product['name'])
-                   value="{{$product['name']}}"
-                   @endif
-                   >
+                   value="{{old('name')}}">
             @if ($errors->has('name'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('name')}}</div>
             @endif
@@ -30,11 +25,7 @@
                    id="price"
                    type="number"
                    placeholder="価格"
-                   @if(old('price'))
-                   value="{{old('price')}}"
-                   @elseif(isset($product) and $product['price'])
-                   value="{{$product['price']}}"
-                   @endif>
+                   value="{{old('price')}}">
             @if ($errors->has('price'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('price')}}</div>
             @endif

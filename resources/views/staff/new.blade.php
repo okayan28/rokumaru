@@ -11,12 +11,7 @@
                    id="name" 
                    type="text"
                    placeholder="スタッフ名" 
-                   @if(old('name'))
-                   value="{{old('name')}}"
-                   @elseif(isset($data) and $data['name'])
-                   value="{{$data['name']}}"
-                   @endif
-                   >
+                   value="{{old('name')}}">
             @if ($errors->has('name'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('name')}}</div>
             @endif

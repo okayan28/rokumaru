@@ -14,9 +14,9 @@
         <input type="hidden" name="name" value="{{$data['name']}}">
         <input type="hidden" name="password" value="{{$data['password']}}">
         <div class="mb-4">
-            <button formaction="/staffs/{{$data['id']}}/edit/back" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <a href="/staffs/{{$data['id']}}/edit" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 戻る 
-            </button>
+            </a>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 保存
             </button>

@@ -12,12 +12,7 @@
                    id="name" 
                    type="text"
                    placeholder="スタッフ名" 
-                   @if(old('name'))
-                   value="{{old('name')}}"
-                   @elseif(isset($staff) and $staff['name'])
-                   value="{{$staff['name']}}"
-                   @endif
-                   >
+                   value="{{old('name') ?: $staff->name}}">
             @if ($errors->has('name'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('name')}}</div>
             @endif
@@ -41,7 +36,7 @@
             @endif
         </div>
         <div class="mb-4">
-            <a href="/staffs" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <a href="/staffs/{{$staff->id}}" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 戻る
             </a>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
