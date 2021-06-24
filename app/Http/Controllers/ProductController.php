@@ -74,4 +74,11 @@ class ProductController extends Controller
     {
         return view('product.deleteConfirm', ['product' => Product::find($id)]);
     }
+    
+    public function delete(Request $request, $id)
+    {
+        Product::find($id)->delete();
+        $request->session()->flash('flash', '商品[id='.$id.']を削除しました');
+        return redirect('/products');
+    }
 }
