@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 30);
             $table->integer('price');
-            $table->string('gazou', 30);
+            $table->string('gazou', 30)->nullable(true);
         });
     }
 

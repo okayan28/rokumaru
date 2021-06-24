@@ -34,3 +34,4 @@ Route::post('/staffs/{id}/delete', [StaffController::class, 'delete']);
 
 Route::get('/products/new', [ProductController::class, 'new']);
 Route::post('/products/new/confirm', [ProductController::class, 'newConfirm']);
+Route::post('/products/create', [ProductController::class, 'create']);
