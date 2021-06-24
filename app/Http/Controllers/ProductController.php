@@ -69,4 +69,9 @@ class ProductController extends Controller
         $request->session()->flash('flash', '商品[id='.$product->id.']を更新しました');
         return redirect('/products');
     }
+
+    public function deleteConfirm($id)
+    {
+        return view('product.deleteConfirm', ['product' => Product::find($id)]);
+    }
 }

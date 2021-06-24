@@ -8,7 +8,7 @@
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2">価格</label>
-            <p>{{$product['price']}}</p>
+            <p>&yen;{{$product['price']}}</p>
         </div>
         <input type="hidden" name="id" value="{{$product['id']}}">
         <input type="hidden" name="name" value="{{$product['name']}}">
