@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductCreateConfirmRequest;
 use App\Http\Requests\ProductCreateRequest;
 use App\Http\Requests\ProductEditConfirmRequest;
+use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -56,5 +57,16 @@ class ProductController extends Controller
     {
         $request->flash();
         return view('product.editConfirm', ['product' => $request->all()]);
+    }
+
+    public function update(ProductUpdateRequest $request)
+    {
+        $form = $request->all();
+        $product = Product::find($form['id']);
+        unset($form['_token']);
+        $product->fill($form);
+        $product->save();
+        $request->session()->flash('flash', '商品[id='.$product->id.']を更新しました');
+        return redirect('/products');
     }
 }
