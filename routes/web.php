@@ -36,3 +36,4 @@ Route::post('/products/new/confirm', [ProductController::class, 'newConfirm']);
 Route::post('/products/create', [ProductController::class, 'create']);
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
+Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
