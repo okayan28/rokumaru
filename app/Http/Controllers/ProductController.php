@@ -31,6 +31,12 @@ class ProductController extends Controller
         unset($form['_token']);
         $product->fill($form);
         $product->save();
+        $request->session()->flash('flash', '商品[id='.$product->id.']を作成しました');
         return redirect('/products');
+    }
+
+    public function index()
+    {
+        return view('product.index', ['products' => Product::all()]);
     }
 }
