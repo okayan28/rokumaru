@@ -39,4 +39,9 @@ class ProductController extends Controller
     {
         return view('product.index', ['products' => Product::all()]);
     }
+
+    public function show($id)
+    {
+        return view('product.show', ['product' => Product::find($id)]);
+    }
 }
