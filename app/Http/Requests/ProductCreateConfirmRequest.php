@@ -25,7 +25,8 @@ class ProductCreateConfirmRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'price' => 'required|integer|numeric'
+            'price' => 'required|integer|numeric',
+            'gazou' => 'required|max:36'
         ];
     }
 }
