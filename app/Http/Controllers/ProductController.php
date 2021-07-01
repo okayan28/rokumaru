@@ -19,7 +19,10 @@ class ProductController extends Controller
     public function newConfirm(ProductCreateConfirmRequest $request)
     {
         $request->flash();
-        return view('product.newConfirm', ['product' => $request->all()]);
+        $path = $request->file('gazou')->store('public/images');
+        $form = $request->all();
+        $form['gazou_path'] = $path;
+        return view('product.newConfirm', ['product' => $form]);
     }
 
     public function newBack()

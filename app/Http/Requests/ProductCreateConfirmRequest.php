@@ -26,7 +26,7 @@ class ProductCreateConfirmRequest extends FormRequest
         return [
             'name' => 'required',
             'price' => 'required|integer|numeric',
-            'gazou' => 'required|max:36'
+            'gazou' => 'file|image|max:2000'
         ];
     }
 }

@@ -1,6 +1,6 @@
 <x-layout>
     <h1 class="text-3xl my-8">商品追加</h1>
-    <form method="POST" action="/products/new/confirm">
+    <form method="POST" action="/products/new/confirm" enctype="multipart/form-data">
         @csrf
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -34,7 +34,10 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="gazou">
                 画像を選んでください。
             </label>
-            <input type="file" name="gazou">
+            <input type="file"
+                   id="gazou"
+                   name="gazou"
+                   value="{{old('gazou')}}">
             @if ($errors->has('gazou'))
                 <div class="text-red-700 text-xs ml-2">{{$errors->first('gazou')}}</div>
             @endif
