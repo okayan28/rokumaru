@@ -31,6 +31,15 @@
             @endif
         </div>
         <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="gazou">
+                画像を選んでください。
+            </label>
+            <input type="file" name="gazou">
+            @if ($errors->has('gazou'))
+                <div class="text-red-700 text-xs ml-2">{{$errors->first('gazou')}}</div>
+            @endif
+        </div>
+        <div class="mb-4">
             <a href="/products" class="inline-flex items-center bg-gray-400 hover:bg-gray-700 text-white hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 戻る
             </a>
