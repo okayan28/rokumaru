@@ -14,12 +14,14 @@
                 <th class="border px-4 py-2">価格</th>
                 <td class="border px-4 py-2">{{$product['price']}}</td>
             </tr>
+            @if(!empty($product['gazou']))
             <tr>
                 <th class="border px-4 py-2">サムネイル</th>
                 <td class="border px-4 py-2">
                     <img src="{{asset($product['gazou'])}}">
                 </td>
             </tr>
+            @endif
         </tbody>
     </table>
     <div class="mb-4">
