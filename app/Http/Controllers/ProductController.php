@@ -21,7 +21,8 @@ class ProductController extends Controller
         $request->flash();
         $path = $request->file('gazou')->store('public/images');
         $form = $request->all();
-        $form['gazou_path'] = $path;
+        $parsed_uri = explode('/', $path);
+        $form['gazou_path'] = '/storage/images/' . end($parsed_uri);
         return view('product.newConfirm', ['product' => $form]);
     }
 
