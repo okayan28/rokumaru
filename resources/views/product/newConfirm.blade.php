@@ -12,7 +12,7 @@
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2">画像</label>
-            <img src="{{asset($product['gazou_path'])}}">
+            <img class="max-w-md" src="{{asset($product['gazou_path'])}}">
         </div>
         <input type="hidden" name="name" value="{{$product['name']}}">
         <input type="hidden" name="price" value="{{$product['price']}}">

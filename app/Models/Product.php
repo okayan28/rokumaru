@@ -12,4 +12,11 @@ class Product extends Model
     protected $guarded = array('id');
     public $timestamps = false;
     protected $table = 'products';
+
+    public function get_gazou_path()
+    {
+        $parsed_uri = explode('/', $this->gazou);
+        return '/storage/images/' . end($parsed_uri);
+        
+    }
 }
