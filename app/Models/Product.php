@@ -16,7 +16,15 @@ class Product extends Model
     public function get_gazou_path()
     {
         $parsed_uri = explode('/', $this->gazou);
-        return '/storage/images/' . end($parsed_uri);
+        $file_name = end($parsed_uri);
+        return '/storage/images/' . $file_name;
         
+    }
+
+    public function get_gazou_file_location()
+    {
+        $parsed_uri = explode('/', $this->gazou);
+        $file_name = end($parsed_uri);
+        return 'public/images/' . $file_name;
     }
 }

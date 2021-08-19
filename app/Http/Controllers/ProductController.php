@@ -8,6 +8,7 @@ use App\Http\Requests\ProductEditConfirmRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -88,7 +89,12 @@ class ProductController extends Controller
 
     public function delete(Request $request, $id)
     {
-        Product::find($id)->delete();
+        $product = Product::find($id);
+        if ($product->gazou)
+        {
+            Storage::delete($product->get_gazou_file_location());
+        }
+        $product->delete();
         $request->session()->flash('flash', '商品[id=' . $id . ']を削除しました');
         return redirect('/products');
     }
