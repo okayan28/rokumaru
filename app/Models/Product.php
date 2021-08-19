@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
@@ -12,6 +13,16 @@ class Product extends Model
     protected $guarded = array('id');
     public $timestamps = false;
     protected $table = 'products';
+
+    protected static function booted()
+    {
+        static::deleted(function ($product) {
+            if ($product->gazou)
+            {
+                Storage::delete($product->get_gazou_file_location());
+            }
+        });
+    }
 
     public function get_gazou_path()
     {
