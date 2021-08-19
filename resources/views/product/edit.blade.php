@@ -1,6 +1,6 @@
 <x-layout>
     <h1 class="text-3xl my-8">商品編集</h1>
-    <form method="POST" action="/products/{{$product->id}}/edit/confirm">
+    <form method="POST" action="/products/{{$product->id}}/edit/confirm" enctype="multipart/form-data">
         @csrf
         <input type="hidden" value="{{$product->id}}" name="id">
         <div class="mb-4">
@@ -22,7 +22,7 @@
                 価格を入力して下さい。
             </label>
             <input class="shadow appearance-none boreditder rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none foucus:shadow-outline" 
-                   name="price" 
+                   name="price"
                    id="price"
                    type="number"
                    placeholder="価格"

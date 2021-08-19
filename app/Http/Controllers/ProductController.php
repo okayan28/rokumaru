@@ -38,7 +38,7 @@ class ProductController extends Controller
         unset($form['_token']);
         $product->fill($form);
         $product->save();
-        $request->session()->flash('flash', '商品[id='.$product->id.']を作成しました');
+        $request->session()->flash('flash', '商品[id=' . $product->id . ']を作成しました');
         return redirect('/products');
     }
 
@@ -60,7 +60,14 @@ class ProductController extends Controller
     public function editConfirm(ProductEditConfirmRequest $request, $id)
     {
         $request->flash();
-        return view('product.editConfirm', ['product' => $request->all()]);
+        $gazou = $request->file('gazou');
+        $form = $request->all();
+        if ($gazou !== null) {
+            $path = $request->file('gazou')->store('public/images');
+            $parsed_uri = explode('/', $path);
+            $form['gazou_path'] = '/storage/images/' . end($parsed_uri);
+        }
+        return view('product.editConfirm', ['product' => $form]);
     }
 
     public function update(ProductUpdateRequest $request)
@@ -70,7 +77,7 @@ class ProductController extends Controller
         unset($form['_token']);
         $product->fill($form);
         $product->save();
-        $request->session()->flash('flash', '商品[id='.$product->id.']を更新しました');
+        $request->session()->flash('flash', '商品[id=' . $product->id . ']を更新しました');
         return redirect('/products');
     }
 
@@ -78,11 +85,11 @@ class ProductController extends Controller
     {
         return view('product.deleteConfirm', ['product' => Product::find($id)]);
     }
-    
+
     public function delete(Request $request, $id)
     {
         Product::find($id)->delete();
-        $request->session()->flash('flash', '商品[id='.$id.']を削除しました');
+        $request->session()->flash('flash', '商品[id=' . $id . ']を削除しました');
         return redirect('/products');
     }
 }

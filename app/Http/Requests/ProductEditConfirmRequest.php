@@ -25,7 +25,8 @@ class ProductEditConfirmRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'price' => 'required|integer|numeric'
+            'price' => 'required|integer|numeric',
+            'gazou' => 'file|image|max:2000'
         ];
     }
 }
