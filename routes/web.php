@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Administrator\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,5 +43,7 @@ Route::post('/products/{id}/update', [ProductController::class, 'update']);
 Route::get('/products/{id}/delete/confirm', [ProductController::class, 'deleteConfirm']);
 Route::post('/products/{id}/delete', [ProductController::class, 'delete']);
 Auth::routes();
+Route::get('/admin/login', [LoginController::class, 'showLoginForm']);
+Route::post('/admin/login', [LoginController::class, 'authenticate']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
