@@ -41,3 +41,6 @@ Route::post('/products/{id}/edit/confirm', [ProductController::class, 'editConfi
 Route::post('/products/{id}/update', [ProductController::class, 'update']);
 Route::get('/products/{id}/delete/confirm', [ProductController::class, 'deleteConfirm']);
 Route::post('/products/{id}/delete', [ProductController::class, 'delete']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
