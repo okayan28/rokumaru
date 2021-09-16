@@ -20,17 +20,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/staffs/new', [StaffController::class, 'new']);
-Route::post('/staffs/new/confirm', [StaffController::class, 'newConfirm']);
-Route::post('/staffs/create', [StaffController::class, 'create']);
-Route::get('/staffs', [StaffController::class, 'index']);
-Route::get('/staffs/{id}', [StaffController::class, 'show']);
-Route::get('/staffs/{id}/edit', [StaffController::class, 'edit']);
-Route::post('/staffs/{id}/edit/confirm', [StaffController::class, 'editConfirm']);
-Route::post('/staffs/{id}/update', [StaffController::class, 'update']);
-Route::get('/staffs/{id}/delete/confirm', [StaffController::class, 'deleteConfirm']);
-Route::post('/staffs/{id}/delete', [StaffController::class, 'delete']);
+Route::group(['middleware' => ['auth:administrators']], function() {
+    Route::get('/staffs/new', [StaffController::class, 'new']);
+    Route::post('/staffs/new/confirm', [StaffController::class, 'newConfirm']);
+    Route::post('/staffs/create', [StaffController::class, 'create']);
+    Route::get('/staffs', [StaffController::class, 'index']);
+    Route::get('/staffs/{id}', [StaffController::class, 'show']);
+    Route::get('/staffs/{id}/edit', [StaffController::class, 'edit']);
+    Route::post('/staffs/{id}/edit/confirm', [StaffController::class, 'editConfirm']);
+    Route::post('/staffs/{id}/update', [StaffController::class, 'update']);
+    Route::get('/staffs/{id}/delete/confirm', [StaffController::class, 'deleteConfirm']);
+    Route::post('/staffs/{id}/delete', [StaffController::class, 'delete']);
+});
 
 Route::get('/products/new', [ProductController::class, 'new']);
 Route::post('/products/new/confirm', [ProductController::class, 'newConfirm']);
